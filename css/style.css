@@ -2,25 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-/*
-  .alegreya-sans {
   font-family: "Alegreya Sans", sans-serif;
-  font-weight: 100;
   font-style: normal;
 }
-.alegreya {
-  font-family: "Alegreya", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-*/
 
 html {
   --main-color: rgb(143, 117, 79);
   --secondary-color: rgb(255, 255, 255);
   --third-color: rgba(255, 255, 255, 0.2);
   --fourth-color: rgba(255, 255, 255, 0.5);
+  --main-padding: 50px;
+  --text-color: rgb(102, 102, 102);
 }
 
 ul {
@@ -63,6 +55,15 @@ a {
   }
 }
 
+.container {
+  margin: 0 auto;
+}
+
+img {
+  position: relative; /* Make images positioned relative */
+  z-index: 2; /* Set a higher z-index than the header shadow */
+}
+
 /* Header */
 header {
   position: fixed;
@@ -72,10 +73,6 @@ header {
   z-index: 100;
   width: 100%;
   transition: background-color 0.3s;
-}
-
-header .container {
-  margin: 0 auto;
 }
 
 header .header-content {
@@ -115,9 +112,7 @@ header ul li {
 header ul li a {
   color: var(--secondary-color);
   font-size: 13px;
-  font-family: "Alegreya Sans", sans-serif;
   font-weight: 600;
-  font-style: normal;
 }
 
 header.scrolled ul li a {
@@ -184,6 +179,18 @@ header .bar-button:focus {
   }
 }
 
+/* Header Shadow */
+.header-shadow {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 118px;
+  left: 0;
+  background-color: #f9f9f9;
+  opacity: 0.2;
+  z-index: 0;
+}
+
 /* demo-panel-menu */
 .demo-panel-menu {
   position: fixed;
@@ -210,9 +217,7 @@ header .bar-button:focus {
   background-color: #1f62c5;
   color: white;
   border-radius: 3px;
-  font-family: "Alegreya Sans", sans-serif;
   font-weight: 500;
-  font-style: normal;
   display: none;
 }
 
@@ -253,9 +258,7 @@ header .bar-button:focus {
 
 .main-section .text p {
   font-size: 28px;
-  font-family: "Alegreya Sans", sans-serif;
   font-weight: 400;
-  font-style: normal;
   color: var(--fourth-color);
 }
 
@@ -263,7 +266,6 @@ header .bar-button:focus {
   font-size: 80px;
   font-family: "Alegreya", serif;
   font-weight: 600;
-  font-style: normal;
   color: var(--secondary-color);
   margin-top: 30px;
   margin-bottom: 10px;
@@ -282,9 +284,7 @@ header .bar-button:focus {
 .main-section .text ul button {
   padding: 20px;
   font-size: 16px;
-  font-family: "Alegreya Sans", sans-serif;
   font-weight: 400;
-  font-style: normal;
   border: none;
   border-radius: 5px;
   transition: 0.3s;
@@ -311,9 +311,117 @@ header .bar-button:focus {
   color: black;
 }
 
+/* About section */
+.about .about-content,
+.our-offer .our-offer-content {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  display: flex;
+}
+
+.about .about-content .text,
+.our-offer .our-offer-content .text {
+  width: 50%;
+}
+
+.about .about-content .image,
+.our-offer .our-offer-content .image {
+  flex: 1;
+}
+
+.about .about-content .image img,
+.our-offer .our-offer-content .image img {
+  width: 100%;
+}
+
+.about .about-content .text,
+.our-offer .our-offer-content .text {
+  padding: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.about .about-content .text h2,
+.our-offer .our-offer-content .text h2 {
+  font-weight: 500;
+  font-size: 40px;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.about .about-content .text p,
+.our-offer .our-offer-content .text p {
+  line-height: 1.8;
+}
+
+.about .about-content .text ul li {
+  margin-top: 20px;
+  display: flex;
+}
+
+.about .about-content .text ul li i {
+  color: var(--main-color);
+  font-size: 20px;
+  width: 50px;
+}
+
+/* Our Offer */
+.our-offer {
+  background-color: #f8f9fa;
+}
+
+/* Gallery */
+.gallery-content {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  text-align: center;
+}
+
+.gallery-content h2 {
+  font-family: "Alegreya", serif;
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.gallery-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-items .gallery-item {
+  width: 32%;
+}
+.gallery-items .gallery-item .image img {
+  width: 100%;
+}
+
+.gallery-items .gallery-item .text h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: "Alegreya", serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.gallery-items .gallery-item .text p {
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+/* Responsive for all devices */
+
 @media (max-width: 791px) {
   .main-section .text h1 {
     font-size: 71px;
+  }
+  .about .about-content .text h2 {
+    font-size: 39px;
   }
 }
 
@@ -327,6 +435,35 @@ header .bar-button:focus {
   .main-section .text p {
     font-size: 23px;
   }
+  .about .about-content,
+  .our-offer .our-offer-content {
+    flex-direction: column;
+    padding: var(--main-padding) 10px;
+  }
+  .about .about-content .text,
+  .our-offer .our-offer-content .text {
+    width: 100%;
+  }
+  .about .about-content .text,
+  .our-offer .our-offer-content .text {
+    padding: 0px;
+  }
+  .about .about-content .text h2,
+  .our-offer .our-offer-content .text h2 {
+    font-size: 36px;
+  }
+  .about .about-content .text h2,
+  .our-offer .our-offer-content .image {
+    margin-top: 30px;
+  }
+
+  .gallery-items {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .gallery-items .gallery-item {
+    width: 100%;
+  }
 }
 
 @media (max-width: 575px) {
@@ -338,5 +475,9 @@ header .bar-button:focus {
   }
   .main-section .text p {
     font-size: 22px;
+  }
+  .about .about-content .text h2,
+  .our-offer .our-offer-content .text h2 {
+    font-size: 32px;
   }
 }
