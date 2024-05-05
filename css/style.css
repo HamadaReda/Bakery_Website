@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+  .alegreya-sans {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.alegreya {
+  font-family: "Alegreya", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+html {
+  --main-color: rgb(143, 117, 79);
+  --secondary-color: rgb(255, 255, 255);
+  --third-color: rgba(255, 255, 255, 0.2);
+  --fourth-color: rgba(255, 255, 255, 0.5);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Container */
+@media (width < 576px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (width >= 576px) {
+  .container {
+    width: 540px;
+  }
+}
+@media (width >= 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (width >= 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (width >= 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+@media (width >= 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 0.5px solid var(--third-color);
+  z-index: 100;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+header .container {
+  margin: 0 auto;
+}
+
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  position: relative;
+}
+
+header.scrolled {
+  background-color: white;
+}
+
+header .logo {
+  width: 200px;
+}
+
+header .logo img {
+  width: 100%;
+}
+
+header.scrolled #logo-image {
+  content: url("../imgs/bakery-color.png");
+}
+
+header #main-nav {
+  display: flex;
+}
+
+header ul li {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li a {
+  color: var(--secondary-color);
+  font-size: 13px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+header.scrolled ul li a {
+  color: black;
+}
+
+header ul li a.active {
+  color: var(--main-color);
+}
+
+header ul li a:hover,
+header #main-nav.show li a:hover {
+  color: var(--main-color);
+}
+
+header #main-nav.show {
+  display: block;
+  position: fixed;
+  background-color: var(--secondary-color);
+  width: 100%;
+  left: 0;
+  top: 118px;
+  z-index: 99;
+}
+
+header #main-nav.show li {
+  display: block;
+  padding: 10px;
+}
+
+header #main-nav.show li a {
+  color: black;
+}
+
+header #main-nav.show li a.active {
+  color: var(--main-color);
+}
+header .bar-button {
+  background: transparent;
+  border: 1px solid var(--third-color);
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: var(--fourth-color);
+  display: none;
+}
+
+header.scrolled .bar-button {
+  border-color: #737373;
+  color: #737373;
+}
+
+header .bar-button:focus {
+  border-width: 5px;
+}
+
+@media (max-width: 991px) {
+  header #main-nav {
+    display: none;
+  }
+  header .bar-button {
+    display: block;
+  }
+}
+
+/* demo-panel-menu */
+.demo-panel-menu {
+  position: fixed;
+  z-index: 90;
+  top: 30%;
+  right: 0;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.demo-panel-menu .demo-1,
+.demo-panel-menu .demo-2 {
+  width: 30px;
+  position: relative;
+}
+.demo-panel-menu .demo-1 span,
+.demo-panel-menu .demo-2 span {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  padding: 5px;
+  background-color: #1f62c5;
+  color: white;
+  border-radius: 3px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  display: none;
+}
+
+.demo-panel-menu .demo-1 span {
+  width: 108px;
+}
+
+.demo-panel-menu .demo-2 span {
+  width: 120px;
+}
+
+.demo-panel-menu .demo-1:hover span,
+.demo-panel-menu .demo-2:hover span {
+  display: block;
+}
+
+.demo-panel-menu img {
+  width: 100%;
+}
+
+/* Main Section */
+.main-section {
+  height: 100vh;
+  background-image: url("../imgs/drew-coffman-1872.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.main-section .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  min-width: 70%;
+}
+
+.main-section .text p {
+  font-size: 28px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--fourth-color);
+}
+
+.main-section .text h1 {
+  font-size: 80px;
+  font-family: "Alegreya", serif;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--secondary-color);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.main-section .text ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.main-section .text ul li {
+  margin-left: 8px;
+}
+
+.main-section .text ul button {
+  padding: 20px;
+  font-size: 16px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.main-section .text ul .first-button {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.main-section .text ul .first-button:hover {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+.main-section .text ul .second-button {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.main-section .text ul .second-button:hover {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+@media (max-width: 791px) {
+  .main-section .text h1 {
+    font-size: 71px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-section .text {
+    width: 80%;
+  }
+  .main-section .text h1 {
+    font-size: 68px;
+  }
+  .main-section .text p {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 575px) {
+  .main-section .text {
+    width: 100%;
+  }
+  .main-section .text h1 {
+    font-size: 49px;
+  }
+  .main-section .text p {
+    font-size: 22px;
+  }
+}
