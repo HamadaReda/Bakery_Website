@@ -313,40 +313,46 @@ header .bar-button:focus {
 
 /* About section */
 .about .about-content,
-.our-offer .our-offer-content {
+.our-offer .our-offer-content,
+.contact .contact-content {
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
   display: flex;
 }
 
 .about .about-content .text,
-.our-offer .our-offer-content .text {
+.our-offer .our-offer-content .text,
+.contact .contact-content .text {
   width: 50%;
 }
 
 .about .about-content .image,
-.our-offer .our-offer-content .image {
+.our-offer .our-offer-content .image,
+.contact .contact-content .map {
   flex: 1;
 }
 
 .about .about-content .image img,
-.our-offer .our-offer-content .image img {
+.our-offer .our-offer-content .image img,
+.contact .contact-content .map iframe {
   width: 100%;
 }
 
 .about .about-content .text,
-.our-offer .our-offer-content .text {
+.our-offer .our-offer-content .text,
+.contact .contact-content .text {
   padding: 30px;
   font-weight: 400;
   font-size: 16px;
   color: var(--text-color);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-content: center;
 }
 
 .about .about-content .text h2,
-.our-offer .our-offer-content .text h2 {
+.our-offer .our-offer-content .text h2,
+.contact .contact-content .text h2 {
   font-weight: 500;
   font-size: 40px;
   color: black;
@@ -354,25 +360,31 @@ header .bar-button:focus {
 }
 
 .about .about-content .text p,
-.our-offer .our-offer-content .text p {
+.our-offer .our-offer-content .text p,
+.contact .contact-content .text p {
   line-height: 1.8;
 }
 
-.about .about-content .text ul li {
+.about .about-content .text ul li,
+.contact .contact-content .text ul li {
   margin-top: 20px;
   display: flex;
 }
 
-.about .about-content .text ul li i {
+.about .about-content .text ul li i,
+.contact .contact-content .text ul li i {
   color: var(--main-color);
-  font-size: 20px;
+  font-size: 32px;
   width: 50px;
 }
 
 /* Our Offer */
-.our-offer {
+.our-offer,
+.contact {
   background-color: #f8f9fa;
 }
+
+/* Contact Section */
 
 /* Gallery */
 .gallery-content {
@@ -423,6 +435,9 @@ header .bar-button:focus {
   .about .about-content .text h2 {
     font-size: 39px;
   }
+  .gallery-items .gallery-item .text h3 {
+    font-size: 23px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -436,25 +451,33 @@ header .bar-button:focus {
     font-size: 23px;
   }
   .about .about-content,
-  .our-offer .our-offer-content {
+  .our-offer .our-offer-content,
+  .contact .contact-content {
     flex-direction: column;
     padding: var(--main-padding) 10px;
   }
   .about .about-content .text,
-  .our-offer .our-offer-content .text {
+  .our-offer .our-offer-content .text,
+  .contact .contact-content .text {
     width: 100%;
   }
   .about .about-content .text,
-  .our-offer .our-offer-content .text {
+  .our-offer .our-offer-content .text,
+  .contact .contact-content .text {
     padding: 0px;
   }
   .about .about-content .text h2,
-  .our-offer .our-offer-content .text h2 {
+  .our-offer .our-offer-content .text h2,
+  .contact .contact-content .text h2 {
     font-size: 36px;
   }
   .about .about-content .text h2,
-  .our-offer .our-offer-content .image {
+  .our-offer .our-offer-content .image,
+  .contact .contact-content .text h2 {
     margin-top: 30px;
+  }
+  .contact .contact-content .map {
+    margin-top: 20px;
   }
 
   .gallery-items {
@@ -463,6 +486,9 @@ header .bar-button:focus {
   }
   .gallery-items .gallery-item {
     width: 100%;
+  }
+  .gallery-items .gallery-item .text h3 {
+    font-size: 22px;
   }
 }
 
@@ -477,7 +503,8 @@ header .bar-button:focus {
     font-size: 22px;
   }
   .about .about-content .text h2,
-  .our-offer .our-offer-content .text h2 {
+  .our-offer .our-offer-content .text h2,
+  .contact .contact-content .text h2 {
     font-size: 32px;
   }
 }
