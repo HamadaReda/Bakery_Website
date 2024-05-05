@@ -13,6 +13,7 @@ html {
   --fourth-color: rgba(255, 255, 255, 0.5);
   --main-padding: 50px;
   --text-color: rgb(102, 102, 102);
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -426,9 +427,116 @@ header .bar-button:focus {
   line-height: 1.8;
 }
 
+/* Info */
+.info {
+  background-color: #403d38;
+}
+
+/* Footer */
+.info .info-content,
+footer .footer-content {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+
+.info .info-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.info .info-content > div {
+  width: 23%;
+  padding: 10px;
+}
+
+.info .info-content > div h3 {
+  font-family: "Alegreya", "serif";
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.info .info-content > div p,
+.info .info-content > div ul li,
+.info .info-content > div ul a {
+  color: var(--fourth-color);
+  line-height: 1.8;
+}
+
+.info .info-content > div ul li {
+  border-bottom: 1px solid var(--fourth-color);
+  padding: 10px;
+}
+
+.info .info-content > div ul li i {
+  width: 25px;
+}
+
+.info .info-content .contact {
+  background-color: #403d38;
+}
+
+.info .info-content .contact li {
+  border: none;
+}
+
+.info .info-content .contact i {
+  font-size: 32px;
+  width: 40px;
+}
+
+footer {
+  background-color: #353330;
+}
+
+footer .footer-content {
+  text-align: center;
+}
+
+footer .footer-content p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--fourth-color);
+}
+
+footer .footer-content ul {
+  display: flex;
+  width: 200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+footer .footer-content ul li {
+  width: 50px;
+  font-weight: 500;
+  font-size: 32px;
+}
+footer .footer-content ul li i {
+  transition: 0.3s;
+  color: #8f754f;
+}
+
+footer .footer-content ul .fa-facebook:hover {
+  color: #4267b2;
+}
+
+footer .footer-content ul .fa-google-plus:hover {
+  color: #db4a39;
+}
+
+footer .footer-content ul .fa-linkedin:hover {
+  color: #0072b1;
+}
+
+footer .footer-content ul .fa-twitter:hover {
+  color: #00acee;
+}
+
 /* Responsive for all devices */
 
-@media (max-width: 791px) {
+@media (max-width: 991px) {
   .main-section .text h1 {
     font-size: 71px;
   }
@@ -437,6 +545,13 @@ header .bar-button:focus {
   }
   .gallery-items .gallery-item .text h3 {
     font-size: 23px;
+  }
+  .info .info-content > div {
+    width: 46%;
+  }
+  .info .info-content > div h3 {
+    margin-top: 30px;
+    text-align: center;
   }
 }
 
@@ -506,5 +621,8 @@ header .bar-button:focus {
   .our-offer .our-offer-content .text h2,
   .contact .contact-content .text h2 {
     font-size: 32px;
+  }
+  .info .info-content > div {
+    width: 98%;
   }
 }
